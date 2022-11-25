@@ -25,66 +25,6 @@ function Navbar() {
             </Link>
           </div>
 
-          <div className="hidden md:block">
-            <nav aria-label="Site Nav">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/Titties"
-                  >
-                    About
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Careers
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    History
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Services
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Projects
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <Link
