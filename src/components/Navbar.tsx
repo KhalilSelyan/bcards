@@ -1,13 +1,9 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { trpc } from "../utils/trpc";
 
 function Navbar() {
   const { data: sessionData } = useSession();
-  const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined }
-  );
+
   return (
     <header aria-label="Site Header" className="bg-slate-900">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
