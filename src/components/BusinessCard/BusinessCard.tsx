@@ -14,7 +14,7 @@ const BusinessCard = ({ inputs, card }: BusinessCardProps) => {
   const { data: sessionData } = useSession();
 
   const front = card
-    ? "http://localhost:3000/api/og" +
+    ? "https://bcards.vercel.app/api/og" +
       "?username=" +
       card.name +
       "&title=" +
@@ -22,7 +22,7 @@ const BusinessCard = ({ inputs, card }: BusinessCardProps) => {
       "&imgSrc=" +
       card.imgSrc
     : inputs &&
-      "http://localhost:3000/api/og" +
+      "https://bcards.vercel.app/api/og" +
         "?username=" +
         sessionData?.user?.name +
         "&title=" +
