@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { BusinessCard } from "@prisma/client";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 interface BusinessCardProps {
   inputs?: {
@@ -75,7 +76,24 @@ const BusinessCard = ({ inputs, card }: BusinessCardProps) => {
               <span className="property">email</span>
               <span className="operator">: </span>
               <span className="string">
-                {card ? card.email : sessionData?.user?.email}
+                {/* send email to this email */}
+                <span
+                  className="cursor-pointer"
+                  onClick={() => {
+                    if (card && card.email !== null) {
+                      navigator.clipboard.writeText(card.email);
+                      alert("Email copied to clipboard");
+                    } else if (
+                      sessionData &&
+                      sessionData?.user?.email != null
+                    ) {
+                      navigator.clipboard.writeText(sessionData?.user?.email);
+                      alert("Email copied to clipboard");
+                    }
+                  }}
+                >
+                  {card ? card.email : sessionData?.user?.email}
+                </span>
               </span>
               <span>,</span>
             </div>
@@ -83,7 +101,21 @@ const BusinessCard = ({ inputs, card }: BusinessCardProps) => {
               <span className="property">website</span>
               <span className="operator">:</span>
               <span className="string">
-                {card ? card.website : inputs?.website}
+                <a
+                  href={
+                    card
+                      ? card?.website.includes("https://")
+                        ? card.website
+                        : "https://" + card.website
+                      : inputs?.website.includes("https://")
+                      ? inputs?.website
+                      : "https://" + inputs?.website
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {card ? card.website : inputs?.website}
+                </a>
               </span>
             </div>
             <span>{"}"}</span>
