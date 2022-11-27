@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { BusinessCard } from "@prisma/client";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface BusinessCardProps {
   inputs?: {
